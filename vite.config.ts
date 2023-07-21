@@ -2,25 +2,34 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
+import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   cacheDir: './node_modules/.vite/mfe-remote',
 
   server: {
     port: 4200,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   preview: {
     port: 4300,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   plugins: [
     react(),
     viteTsConfigPaths({
-      root: './',
+      root: './'
     }),
+    federation({
+      name: 'remoteApp',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/app/app.tsx'
+      },
+      shared: ['react', 'react-dom']
+    })
   ],
 
   // Uncomment this if you are using workers.
@@ -35,9 +44,9 @@ export default defineConfig({
   test: {
     globals: true,
     cache: {
-      dir: './node_modules/.vitest',
+      dir: './node_modules/.vitest'
     },
     environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-  },
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+  }
 });
