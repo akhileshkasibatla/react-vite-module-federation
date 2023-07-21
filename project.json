@@ -1,0 +1,78 @@
+{
+  "name": "mfe-remote",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/mfe-remote"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mfe-remote:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mfe-remote:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "mfe-remote:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nrwl/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "mfe-remote:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "mfe-remote:build:development"
+        },
+        "production": {
+          "buildTarget": "mfe-remote:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nrwl/vite:test",
+      "outputs": ["coverage/mfe-remote"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/mfe-remote"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "mfe-remote:build"
+      }
+    }
+  },
+  "tags": []
+}
