@@ -1,14 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
+import MobxTest from './containers/mobx-test/mobx-test';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="mfe-remote" />
-
-      <div />
+      <MobxTest />
     </>
   );
 }

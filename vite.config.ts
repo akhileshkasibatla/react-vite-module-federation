@@ -26,9 +26,9 @@ export default defineConfig({
       name: 'remoteApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/app/app.tsx'
+        './Mobx': './src/app/containers/mobx-test/mobx-test.tsx'
       },
-      shared: ['react', 'react-dom']
+      shared: ['react', 'react-dom', 'mobx', 'mobx-react']
     })
   ],
 
