@@ -1,14 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
+import { lazy, Suspense } from 'react';
+const RemoteApp = lazy(() => import('remoteApp/App') as any);
 
 export function App() {
   return (
     <>
-      <NxWelcome title="mfe-host" />
-
-      <div />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RemoteApp />
+      </Suspense>
     </>
   );
 }
