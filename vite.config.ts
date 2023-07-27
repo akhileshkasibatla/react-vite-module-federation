@@ -26,7 +26,7 @@ export default defineConfig({
       remotes: {
         remoteApp: 'http://localhost:4300/assets/remoteEntry.js'
       },
-      shared: ['react', 'react-dom', 'mobx', 'mobx-react']
+      shared: ['react', 'react-dom', 'mobx-react']
     })
   ],
 
