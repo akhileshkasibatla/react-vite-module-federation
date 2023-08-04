@@ -29,15 +29,9 @@ export default defineConfig({
         './Mobx': './src/app/containers/mobx-test/mobx-test.tsx',
         './Dummy': './src/app/containers/dummy/dummy.tsx'
       },
-      shared: ['react', 'react-dom', 'mobx-react'],
+      shared: ['react', 'react-dom'],
     })
   ],
-
-  build: {
-    target: 'esnext',
-    minify: false,
-    sourcemap: true
-  },
 
   // Uncomment this if you are using workers.
   // worker: {

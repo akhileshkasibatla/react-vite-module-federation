@@ -25,7 +25,7 @@ const MobxTest = (props: MobxTestProps): JSX.Element => {
 
   return (
     <div>
-      <NxWelcome title={`Timer: ${timer.secondsPassed}`} />
+      <NxWelcome title={`Vite Timer: ${timer.secondsPassed}`} />
     </div>
   );
 };
