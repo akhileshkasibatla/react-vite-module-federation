@@ -3,7 +3,7 @@ const { withReact } = require('@nrwl/react');
 const { withModuleFederation } = require('@nrwl/react/module-federation');
 
 const moduleFederationConfig = require('./module-federation.config');
-const sharedLibs = new Set(['react', 'react-dom']);
+const sharedLibs = new Set(['react', 'react-dom', 'mobx-react']);
 
 // Nx plugins for webpack.
 module.exports = composePlugins(
