@@ -12,10 +12,13 @@
   "author": "Akhilesh Kasibatla",
   "private": true,
   "dependencies": {
-    "mobx": "^6.10.0",
-    "mobx-react": "^9.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "mobx-react": "^7.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   },
   "devDependencies": {
     "@nrwl/cypress": "15.9.2",

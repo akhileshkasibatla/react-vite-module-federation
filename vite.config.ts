@@ -23,14 +23,21 @@ export default defineConfig({
       root: './'
     }),
     federation({
-      name: 'remoteApp',
+      name: 'viteRemoteApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './Mobx': './src/app/containers/mobx-test/mobx-test.tsx'
+        './Mobx': './src/app/containers/mobx-test/mobx-test.tsx',
+        './Dummy': './src/app/containers/dummy/dummy.tsx'
       },
-      shared: ['react', 'react-dom', 'mobx', 'mobx-react']
+      shared: ['react', 'react-dom', 'mobx-react'],
     })
   ],
+
+  build: {
+    target: 'esnext',
+    minify: false,
+    sourcemap: true
+  },
 
   // Uncomment this if you are using workers.
   // worker: {
