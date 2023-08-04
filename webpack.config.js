@@ -18,13 +18,15 @@ module.exports = composePlugins(
           singleton: true,
         };
       }
-      // Returning false means the library is not shared.
+      // Returning false means the library is not shared.◊
       return false;
     },
   }),
   (config) => {
     // Update the webpack config as needed here.
     // e.g. `config.plugins.push(new MyPlugin())`
-    return config;
+    return {
+      ...config,
+    };
   }
 );
