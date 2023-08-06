@@ -1,14 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import { lazy, Suspense } from 'react';
-// const Mobx = lazy(() => import('remoteApp/Mobx') as any);
-// const Mobx = lazy(() => import('viteRemoteApp/Mobx') as any);
-import Mobx from 'viteRemoteApp/Mobx';
+import { Suspense, lazy } from 'react';
+const MobxTest = lazy(() => import('viteRemoteApp/MobxTest').then(module => ({ default: module.MobxTest })) as any)
 
 export function App() {
   return (
     <div>
-        <Mobx />
+      <Suspense fallback="<div>Loading.....</div>">
+        <MobxTest />
+      </Suspense>
     </div>
   );
 }
