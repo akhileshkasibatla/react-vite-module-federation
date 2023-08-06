@@ -26,8 +26,7 @@ export default defineConfig({
       name: 'viteRemoteApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './Mobx': './src/app/containers/mobx-test/mobx-test.tsx',
-        './Dummy': './src/app/containers/dummy/dummy.tsx'
+        './MobxTest': './src/app/containers/mobx-test/mobx-test.tsx'
       },
       shared: ['react', 'react-dom'],
     })

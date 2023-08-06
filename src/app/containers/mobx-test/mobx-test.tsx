@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 /* eslint-disable-next-line */
 export interface MobxTestProps {}
 
-const MobxTest = (props: MobxTestProps): JSX.Element => {
+export const MobxTest = observer((props: MobxTestProps) => {
   const timer = useLocalObservable(() => ({
     secondsPassed: 0,
     increaseTimer() {
@@ -28,6 +28,4 @@ const MobxTest = (props: MobxTestProps): JSX.Element => {
       <NxWelcome title={`Vite Timer: ${timer.secondsPassed}`} />
     </div>
   );
-};
-
-export default observer(MobxTest);
+});
